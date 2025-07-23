@@ -1,0 +1,13 @@
+
+################### Building a simple web server with golang
+
+--- Commands
+- go build 
+- go run main.go 
+
+--- Access html pages from static folder (fileServer := http.FileServer(http.Dir("./static")); http.Handle("/", fileServer))
+- "/"             --> points to index.html 
+- "/fileName.html --> opens any html page
+
+--- GET request route
+- http.HandleFunc("/hello", anyMethodCall)
