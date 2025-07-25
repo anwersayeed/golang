@@ -1,0 +1,27 @@
+
+#########################################################
+--- Commands
+- go build
+- go run main.go
+
+#########################################################
+--- Routes (POSTMAN)  -method-    -route-
+- GET     --> getAll  getMovies   /movies
+- GET     --> getById getMovie    /movies/id
+- POST    --> create  createMovie /movies
+- PUT     --> update  updateMovie /movies/id
+- DELETE  --> delete  deleteMovie /movies/id
+
+#########################################################
+--- Benchmark for something is how fast and how slow
+
+#########################################################
+- user --> routes --> controllers (logic) --> models (operation with DB:- CRUD)
+
+#########################################################
+- if we do not want to use something, we store it as _, cause if we store in a named variable, we have to use it
+
+#########################################################
+- user send json, we send back some json
+- when we get something from user in json :- json.Unmarshal
+- when we send back in json               :- json.Marshal(b)

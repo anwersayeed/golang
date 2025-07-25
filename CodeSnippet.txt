@@ -1,0 +1,107 @@
+
+
+####################################################### Server and Port
+
+func main() {
+    r := mux.NewRouter()
+    r.HandleFunc("/movies", createMovie).Methods("POST") // in case of controllers
+    http.Handle("/", r)
+    log.Fatal(http.ListenAndServe("localhost:9090", r))
+}
+
+####################################################### Error Handling
+
+func Connect() {
+    d, err := gorm.Open("mysql", "credentials")
+    if err != nil {
+        panic(err)
+    }
+    db = d
+}
+
+####################################################### Members
+
+var movies []Movie
+
+var (
+    db *gorm.DB
+)
+
+const apiKey = "y847r843r73489r7394r7"
+
+type Movie struct {
+	ID       string    `json:"id"`
+	Isbn     string    `json:"isbn"`
+	Title    string    `json:"title"`
+	Director *Director `json:"director"`
+}
+
+type Director struct {
+	Firstname string `json:"firstname"`
+	Lastname  string `json:"lastname"`
+}
+
+func GetBookById(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	res, _ := // code
+	w.Header().Set("Content-Type", "pkglication/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}
+
+####################################################### Method
+
+func Connect() {
+
+}
+
+func GetDB() *gorm.DB {
+    return db
+}
+
+func fetchWeather(city string) interface{} {
+	var data struct {
+		Main struct {
+			Temp float64 json:"temp"
+		} json:"main"
+	}
+	return data
+}
+
+// API Call
+url := fmt.Sprintf("url/weather?q=%s&appid=%s", city, apiKey)
+resp, err := http.Get(url)
+if err != nil {
+    fmt.Printf("Error fetching weather for %s: %s\n", city, err)
+    return data
+}
+
+// method within method - in case threading/ go routine/ concurrency
+var wg sync.WaitGroup
+func main() {
+	go func() {
+		wg.Wait()
+		close(ch)
+	}()
+}
+
+####################################################### Loops
+
+for index, item := range movies {
+    if item.ID == params["id"] {
+        return
+    }
+}
+
+####################################################### Benchmark
+func main() {
+	startNow := time.Now()
+    cities := []string{"Toronot", "London"}
+    for _, city := range cities {
+        data := fetchWeather(city)
+        fmt.Println("This is the data", data)
+    }
+    fmt.Println("This operation took:", time.Since(startNow))
+}
+
+#######################################################
